@@ -25,19 +25,54 @@
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
     <title>React App</title>
+
+    <link rel="stylesheet" href="/jsplumbtoolkit.css">
+    <link rel="stylesheet" href="/jsplumbtoolkit-syntax-highlighter.css">
+    <link rel="stylesheet" href="/jsplumbtoolkit-demo-support.css">
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
+    <div class="jtk-demo-main">
 
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
+      <!-- this is the main drawing area -->
+      <div class="jtk-demo-canvas">
+        <!-- controls -->
+        <div class="controls">
+          <i class="fa fa-arrows selected-mode" mode="pan" title="Pan Mode"></i>
+          <i class="fa fa-pencil" mode="select" title="Select Mode"></i>
+          <i class="fa fa-home" reset title="Zoom To Fit"></i>
+        </div>
+        <!-- miniview -->
+        <div class="miniview"></div>
+      </div>
 
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
+      <div class="jtk-demo-rhs">
+        <div class="sidebar node-palette">
+          <div title="Drag Node to canvas" data-node-type="node" class="sidebar-item">
+            <i class="icon-tablet"></i>Drag Node
+          </div>
+          <div title="Drag Group to canvas" data-jtk-is-group="true" data-node-type="group" class="sidebar-item">
+            <i class="icon-tablet"></i>Drag Group
+          </div>
+        </div>
+        <div class="description">
+          <p>
+            This is a demonstration of the Groups functionality.
+          </p>
+          <ul>
+            <li>Drag new Nodes/Groups from the palette on the left onto the workspace. You can drag Nodes directly into Groups.</li>
+            <li>Collapse/Expand Groups with the -/+ buttons</li>
+            <li>Drag existing Nodes into Groups to add them.</li>
+            <li>Nodes can be dragged out of Group 1 but not out of Group 2</li>
+            <li>Click the 'Pencil' icon to enter 'select' mode, then select several nodes. Click the canvas to exit.</li>
+            <li>Click the 'Home' icon to zoom out and see all the nodes.</li>
+          </ul>
+        </div>
+        <div class="jtk-demo-dataset"></div>
+      </div>
+
+
+
+    </div>
   </body>
 </html>
